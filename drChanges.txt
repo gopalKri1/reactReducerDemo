@@ -1,0 +1,29 @@
+let array = [1, 2, 3];
+let drs = [];
+const RENDERED = 'Y';
+const NOT_RENDERED = 'N';
+array.forEach(obj => {
+drs.push({ dr : obj ,  display : NOT_RENDERED});
+});
+let filterDr =  drs.map(dr => {
+ if(dr.display === NOT_RENDERED) return dr;
+});
+
+let selectedDr = 1;
+let currDrs = [];
+filterDr.forEach(obj => {
+  if(obj.dr === selectedDr ){
+     currDrs.push({ dr : obj.dr ,  display : RENDERED});
+     }else{
+     currDrs.push(obj);
+     }
+ //console.log(obj);
+  
+})
+console.log(currDrs);
+ filterDr =  currDrs.filter(dr => dr.display === NOT_RENDERED);
+console.log(filterDr);
+
+
+
+
